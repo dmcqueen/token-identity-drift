@@ -1,6 +1,6 @@
 # Token Identity Drift
 
-**How lexical token embeddings rapidly lose identity and become context-dominated inside transformer models.**
+**How lexical token embeddings rapidly lose identity and are reshaped by context inside transformer models.**
 
 This repository presents a reproducible interpretability study of how individual token representations evolve inside transformer language models.
 
