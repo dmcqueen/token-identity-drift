@@ -146,7 +146,7 @@ For example:
 * `Ġlead` as a **verb** (“She will lead the team…”)
 * `Ġlead` as a **metal** (“The pipes were contaminated with lead.”)
 
-At each transformer layer, we compare:
+At each transformer layer, I compare:
 
 * the hidden-state vector for `Ġlead` in context A
 * with the hidden-state vector for `Ġlead` in context B
