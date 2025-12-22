@@ -1,16 +1,16 @@
 # Token Identity Drift
 
-**Measuring how lexical token identity transforms into contextual representations across transformer layers.**
+**How lexical token embeddings rapidly lose identity and become context-dominated inside transformer models.**
 
-This repository contains a reproducible interpretability study probing how *individual token representations evolve inside transformer language models*. Specifically, it measures how quickly a token’s hidden-state representation diverges from its original embedding and how strongly that representation becomes context-dependent.
+This repository presents a reproducible interpretability study of how individual token representations evolve inside transformer language models.
 
-The core finding is that **token identity is extremely short-lived inside deep transformers**: after only a small number of layers, representations are no longer tied to lexical identity and instead reflect contextual, task-driven structure.
+It shows that **token embeddings act only as an initialization**: after a small number of layers, representations are dominated by contextual interaction rather than lexical origin.
 
 ---
 
 ## Motivation
 
-Transformer models begin computation from discrete token embeddings, but downstream behavior suggests that these embeddings serve only as *initial conditions*. Meaning appears to emerge through contextual interaction across layers rather than being preserved as a fixed symbolic unit.
+Transformer models begin computation from discrete token embeddings yet their downstream behavior suggests that these embeddings do **not** function as stable semantic units. Meaning appears to emerge through contextual interaction across layers rather than being preserved as a fixed symbolic unit.
 
 This project investigates two concrete questions:
 
@@ -31,6 +31,8 @@ These questions are relevant to:
 - **Models:** GPT-2, DistilGPT-2, GPT-2-Medium
 - **Target tokens:** Polysemous whole-word tokens (e.g. `Ġlead`, `Ġbank`)
 - **Metric:** Cosine similarity
+- **Identity similarity** measures alignment between a token’s hidden state and its original embedding.
+- **Context similarity** measures alignment between hidden states of the same token appearing in different semantic contexts.
 
 For each experiment:
 1. A prompt is tokenized
@@ -47,7 +49,7 @@ All results are saved as CSVs and plotted automatically.
 
 ## Experiments
 
-Experiments are defined declaratively in `experiments.yaml` and consist of controlled semantic contrasts using the *same token ID*:
+Experiments are defined as paired semantic contrasts using the **same surface token** across distinct contexts.
 
 ```yaml
 experiments:
@@ -91,9 +93,9 @@ Each experiment produces:
 
 ### Identity vs Context Drift
 
-*(example: `Ġlead`, GPT-2-Medium)*
+*Example: `Ġlead` (verb vs metal), GPT-2-Medium*
 
-#### Key observations
+#### Key Takeaways
 
 **Identity collapses almost immediately**
 - Cosine similarity to the original embedding drops sharply after the first transformer layer, approaching zero or becoming negative.
@@ -213,7 +215,7 @@ This supports the view that transformer representations are:
 ```text
 token-identity-drift/
 ├── run_suite.py           # Full experiment runner
-├── make_composites.py     # Composite plotting
+├── make_composites.py     # Multi-line identity vs context visualizations
 ├── experiments.yaml       # Experiment definitions
 ├── run_all.sh             # Run full pipeline
 ├── setup.sh               # Environment setup
@@ -267,4 +269,4 @@ Planned extensions include:
 
 ## Citation / Attribution
 
-If you use or extend this work, attribution is appreciated.
+If you use or extend this work in research or writing, attribution or citation is appreciated.
