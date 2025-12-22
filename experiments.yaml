@@ -1,0 +1,16 @@
+experiments:
+  - label: lead_verb
+    token: "Ġlead"
+    prompt: "She will lead the team through the transition."
+
+  - label: lead_metal
+    token: "Ġlead"
+    prompt: "The pipes were contaminated with lead."
+
+  - label: bank_finance
+    token: "Ġbank"
+    prompt: "The bank approved the loan."
+
+  - label: bank_river
+    token: "Ġbank"
+    prompt: "The boat reached the river bank."

@@ -1,0 +1,5 @@
+model,label,token,half_life_layer,final_similarity,context_dominance_layer
+gpt2,lead_verb,Ġlead,3,-0.13551539182662964,-1
+gpt2,lead_metal,Ġlead,4,-0.1363348662853241,-1
+gpt2,bank_finance,Ġbank,2,-0.12131857872009277,-1
+gpt2,bank_river,Ġbank,2,-0.14030802249908447,-1

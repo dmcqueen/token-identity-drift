@@ -1,0 +1,5 @@
+model,label,token,half_life_layer,final_similarity,context_dominance_layer
+distilgpt2,lead_verb,Ġlead,3,-0.11999671906232834,-1
+distilgpt2,lead_metal,Ġlead,3,-0.1236054077744484,-1
+distilgpt2,bank_finance,Ġbank,2,-0.10586760193109512,-1
+distilgpt2,bank_river,Ġbank,2,-0.1230190321803093,-1
